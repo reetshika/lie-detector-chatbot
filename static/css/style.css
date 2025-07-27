@@ -1,0 +1,123 @@
+/* reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html, body {
+  width:100%; height:100%;
+  background:#000;
+  color:#0f0;
+  font-family: monospace;
+  overflow: hidden;
+}
+
+/* --------- Welcome Screen --------- */
+#welcome-screen {
+  position: relative;
+  width:100%; height:100%;
+}
+#bg {
+  position:absolute; top:0; left:0;
+  width:100%; height:100%;
+  background:#000;
+}
+.welcome-content {
+  position:absolute;
+  top:50%; left:50%;
+  transform:translate(-50%, -50%);
+  text-align:center;
+  color:#0f0;
+  z-index:10;
+}
+.welcome-content h2 {
+  font-size:2rem;
+  margin-bottom:0.5rem;
+}
+.welcome-content p {
+  margin-bottom:1rem;
+  opacity:0.8;
+}
+.welcome-input-row {
+  display:flex;
+  gap:0.5rem;
+  justify-content:center;
+}
+#welcome-input {
+  padding:0.5rem 1rem;
+  font-size:1rem;
+  background:#111;
+  border:1px solid #0f0;
+  color:#0f0;
+  width:240px;
+}
+#welcome-send {
+  padding:0.5rem 1rem;
+  background:#000;
+  border:1px solid #0f0;
+  color:#0f0;
+  cursor:pointer;
+}
+
+/* --------- Chat Screen --------- */
+.chat-container {
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  padding:1rem;
+}
+header h1 {
+  margin-bottom:1rem;
+  text-align:center;
+}
+#chat-window {
+  flex:1;
+  overflow-y:auto;
+  padding-right:1rem;
+  margin-bottom:1rem;
+}
+.message {
+  max-width:60%;
+  padding:0.75rem 1rem;
+  margin:0.5rem 0;
+  border-radius:1rem;
+  line-height:1.4;
+}
+/* user on left */
+.message.user {
+  align-self:flex-start;
+  margin-right:auto;
+  background:transparent;
+  border:1px solid #0f0;
+}
+/* bot on right */
+.message.bot {
+  align-self:flex-end;
+  margin-left:auto;
+  background:#0f0;
+  color:#000;
+}
+.input-row {
+  display:flex;
+  gap:0.5rem;
+}
+#text-input {
+  flex:1;
+  background:#111;
+  border:1px solid #0f0;
+  color:#0f0;
+  padding:0.75rem 1rem;
+}
+#send-btn, #mic-btn {
+  background:#000;
+  border:1px solid #0f0;
+  color:#0f0;
+  padding:0.75rem 1.25rem;
+  cursor:pointer;
+}
+#mic-btn.listening {
+  background:#0f0;
+  color:#000;
+}
+
+/* allow scroll once chatting */
+body.chatting {
+  overflow:auto;
+}
